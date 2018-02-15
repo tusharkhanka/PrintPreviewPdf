@@ -1,0 +1,27 @@
+<!-- Share configuration related to this particular Share module extension for Print Preview as Pdf
+ Created by Tushar Khanka 
+ Date 14/02/2018
+     -->
+<alfresco-config>
+            <config evaluator="string-compare" condition="DocLibCustom"
+                replace="true">
+                <dependencies>
+                    <js src="components/myaction/print-min.js" />
+                </dependencies>
+            </config>
+            
+ 			<config evaluator="string-compare" condition="DocLibActions">
+                <actions>
+                    <action id="pdfDocumentPrint" type="javascript" label="Print As PDF" icon="pdf-version" >
+                        <param name="function">pdfDocumentPrint</param>
+                        <evaluator negate="false">evaluator.doclib.action.pEditMimetype</evaluator>
+                    </action>
+                </actions>
+
+                <actionGroups>
+                    <actionGroup id="document-details">
+                        <action index="500" id="pdfDocumentPrint" />
+                    </actionGroup>
+                </actionGroups>
+            </config>
+</alfresco-config>

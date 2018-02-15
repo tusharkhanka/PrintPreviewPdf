@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <!--
+    Define beans related to this Share extension here, such as
+     evaluators and resource bootstrapping.
+
+     Note. Any configuration related to the whole Share.war webapp
+           (i.e. not specific to this share extension) should be
+            placed in the alfresco-allinone/share/src/main/resources/alfresco/web-extension/custom-slingshot-application-context.xml file
+   -->
+
+   <!-- Add module specific messages and labels -->
+   <bean id="renderPDF-share.resources"
+         class="org.springframework.extensions.surf.util.ResourceBundleBootstrapComponent">
+      <property name="resourceBundles">
+         <list>
+            <value>alfresco.web-extension.messages.renderPDF-share</value>
+         </list>
+      </property>
+   </bean>
+   
+	<!-- Custom evaluator added by Tushar Khanka 14/2/2018 -->
+	<bean id="evaluator.doclib.action.pEditMimetype" parent="evaluator.doclib.action.isMimetype">
+		<property name="mimetypes">
+			<list>
+				<!-- <value>image/bmp</value>
+				<value>image/cgm</value>
+				<value>image/gif</value>
+				<value>image/ief</value>
+				<value>image/jp2</value>
+				<value>image/jpeg</value>
+				<value>image/png</value>
+				<value>image/x-xwindowdump</value>
+				<value>image/x-dwt</value>
+				<value>image/x-cmu-raster</value>
+				<value>image/vnd.adobe.premiere</value>
+				<value>image/vnd.adobe.photoshop</value>
+				<value>image/tiff	tiff</value>
+				<value>image/x-xpixmap</value>
+				<value>image/x-xbitmap</value>
+				<value>image/x-raw-sony</value>
+				<value>image/x-raw-sigma</value>
+				<value>image/x-raw-red</value>
+				<value>image/x-raw-pentax</value>
+				<value>image/x-raw-panasonic</value>
+				<value>image/x-raw-olympus</value>
+				<value>image/x-raw-nikon</value>
+				<value>image/x-raw-minolta</value>
+				<value>image/x-raw-leica</value>
+				<value>image/x-raw-kodak</value>
+				<value>image/x-raw-hasselblad</value>
+				<value>image/x-raw-fuji</value>
+				<value>image/x-raw-canon</value>
+				<value>image/x-raw-adobe</value>
+				<value>image/x-portable-pixmap</value>
+				<value>image/x-portable-graymap</value>
+				<value>image/x-portable-bitmap</value>
+				<value>image/x-portable-anymap</value> -->
+
+
+				<!-- if nagate is false the uncomment the below given values and commont the above  vice versa -->
+
+
+				<value>application/pdf</value>
+				<value>application/msword</value>
+				<value>application/rtf</value>
+              	<value>text/plain</value>
+        		<value>text/html</value>
+        		<value>text/xml</value>
+                <value>text/csv</value>
+				</list>
+		</property>
+	</bean>
+</beans>
