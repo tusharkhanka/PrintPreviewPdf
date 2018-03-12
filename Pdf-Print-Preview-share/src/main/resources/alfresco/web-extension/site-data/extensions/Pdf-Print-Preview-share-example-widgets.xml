@@ -1,7 +1,7 @@
 <extension>
   <modules>
     <module>
-      <id>renderPDF-share - Example Aikau Widgets</id>
+      <id>Pdf-Print-Preview-share - Example Aikau Widgets</id>
       <version>1.0</version>
       <auto-deploy>true</auto-deploy>
       <configurations>
@@ -9,7 +9,7 @@
           <web-framework>
             <dojo-pages>
               <packages>
-                <package name="tutorials" location="resources/renderPDF-share/js/tutorials"/>
+                <package name="tutorials" location="resources/Pdf-Print-Preview-share/js/tutorials"/>
               </packages>
             </dojo-pages>
           </web-framework>
